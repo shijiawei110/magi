@@ -11,7 +11,7 @@
     <groupId>io.github.shijiawei110</groupId>
     <artifactId>magi</artifactId>
     <packaging>pom</packaging>
-    <version>${magi.version}</version>
+    <version>1.0.0</version>
 
 
     <properties>
@@ -24,6 +24,7 @@
     <modules>
         <module>magi-server</module>
         <module>magi-client</module>
+        <module>magiconf-server</module>
         <module>magi-common</module>
     </modules>
 
