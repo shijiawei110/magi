@@ -1,4 +1,4 @@
-import com.sjw.magi.network.server.NettyServerBuilder;
+import com.sjw.fastnetty.server.NettyServerBuilder;
 import com.sjw.magi.server.MagiServer;
 import com.sjw.magi.server.MagiServerBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +16,10 @@ public class ServerTest {
 
         final NettyServerBuilder nettyServerBuilder = new NettyServerBuilder();
         nettyServerBuilder.setTimeOutMills(3000L);
+        //设置心跳检测最长断开时间为10秒
+        nettyServerBuilder.setHeartBeatSeconds(10);
 
-        final MagiServer magiServer = new MagiServer(magiServerBuilder,nettyServerBuilder);
+        final MagiServer magiServer = new MagiServer(magiServerBuilder, nettyServerBuilder);
         magiServer.start();
     }
 }

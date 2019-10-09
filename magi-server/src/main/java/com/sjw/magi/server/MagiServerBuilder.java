@@ -1,7 +1,6 @@
 package com.sjw.magi.server;
 
 import com.sjw.fastnetty.utils.IpUtil;
-import com.sjw.magi.common.utils.IpUtil;
 import lombok.Data;
 
 /**

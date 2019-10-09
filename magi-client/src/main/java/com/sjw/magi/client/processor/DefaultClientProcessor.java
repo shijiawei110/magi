@@ -1,8 +1,8 @@
 package com.sjw.magi.client.processor;
 
-import com.sjw.magi.network.common.ReqCmdProcessor;
-import com.sjw.magi.network.protocol.CmdPackage;
-import com.sjw.magi.network.utils.ChannelHelper;
+import com.sjw.fastnetty.common.ReqCmdProcessor;
+import com.sjw.fastnetty.protocol.CmdPackage;
+import com.sjw.fastnetty.utils.ChannelHelper;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 

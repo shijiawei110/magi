@@ -1,20 +1,19 @@
 package com.sjw.magi.client;
 
+import com.sjw.fastnetty.client.NettyClient;
+import com.sjw.fastnetty.client.NettyClientBuilder;
+import com.sjw.fastnetty.protocol.CmdPackage;
+import com.sjw.fastnetty.protocol.ResponseCodeType;
+import com.sjw.fastnetty.utils.IpUtil;
+import com.sjw.fastnetty.utils.ThreadNameUtil;
 import com.sjw.magi.client.channel.listener.DefaultMagiClientListener;
 import com.sjw.magi.client.manager.MagiServerCacheManager;
 import com.sjw.magi.common.constant.ReqCmdProcessorCodeConstant;
-import com.sjw.magi.common.exception.MagiException;
+import com.sjw.magi.common.expection.MagiException;
 import com.sjw.magi.common.pojo.MagiClientNode;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
 import com.sjw.magi.common.request.ClientRegisterReq;
 import com.sjw.magi.common.response.RegisterInfoRes;
-import com.sjw.magi.common.utils.IpUtil;
-import com.sjw.magi.common.utils.NodeNameUtil;
-import com.sjw.magi.common.utils.ThreadNameUtil;
-import com.sjw.magi.network.client.NettyClient;
-import com.sjw.magi.network.client.NettyClientBuilder;
-import com.sjw.magi.network.protocol.CmdPackage;
-import com.sjw.magi.network.protocol.ResponseCodeType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
@@ -49,7 +48,7 @@ public class MagiClient {
     public MagiClient(NettyClientBuilder nettyClientBuilder, String zone) {
         nettyClient = nettyClientBuilder.build(new DefaultMagiClientListener());
         //随机获取node name作为唯一标识
-        myselfNode.setNodeName(NodeNameUtil.getName());
+        myselfNode.setNodeName("test-node");
         myselfNode.setZone(zone);
         myselfNode.setAddress(IpUtil.getIpv4());
         magiServerCacheManager.addServerNode(nettyClientBuilder.getServerHost(), nettyClientBuilder.getServerPort());

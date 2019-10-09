@@ -1,8 +1,7 @@
+import com.sjw.fastnetty.client.NettyClientBuilder;
 import com.sjw.magi.client.MagiClient;
-import com.sjw.magi.common.exception.MagiException;
-import com.sjw.magi.common.pojo.MagiClientNode;
+import com.sjw.magi.common.expection.MagiException;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
-import com.sjw.magi.network.client.NettyClientBuilder;
 
 import java.util.List;
 import java.util.Scanner;

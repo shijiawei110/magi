@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 public class MagiException extends RuntimeException {
 
     public static final MagiException CLIENT_ADD_SERVER_NODE_PARAMS_ERROR= new MagiException(10001, "客户端添加服务缓存信息失败(参数不正确)");
+    public static final MagiException CLIENT_INIT_REGISTER_FAIL= new MagiException(10002, "客户端初始化注册到magi服务失败");
 
 
     /**

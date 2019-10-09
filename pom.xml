@@ -45,11 +45,36 @@
                 <artifactId>fastnetty</artifactId>
                 <version>1.0.0</version>
             </dependency>
+
             <!--自身模块-->
             <dependency>
                 <groupId>io.github.shijiawei110</groupId>
                 <artifactId>magi-common</artifactId>
                 <version>${magi.version}</version>
+            </dependency>
+
+            <!--log4j 2-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.11.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.11.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>2.11.2</version>
+            </dependency>
+
+            <!--环形任务队列框架disruptor 用于log4j2异步日志-->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>3.4.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
