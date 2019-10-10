@@ -4,7 +4,7 @@ import com.sjw.fastnetty.common.ReqCmdProcessor;
 import com.sjw.fastnetty.protocol.CmdPackage;
 import com.sjw.magi.common.pojo.MagiClientNode;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
-import com.sjw.magi.common.response.RegisterInfoRes;
+import com.sjw.magi.common.response.magi.RegisterInfoRes;
 import com.sjw.magi.server.manager.ClientNodeManager;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -28,10 +28,10 @@ public class QueryRegisterProcessor implements ReqCmdProcessor {
     }
 
     @Override
-    public CmdPackage executeRequest(Channel channel, CmdPackage requset) {
+    public CmdPackage executeRequest(Channel channel, CmdPackage request) {
         List<MagiClientNode> nodesInfo = clientNodeManager.getAllNodes();
         RegisterInfoRes res = new RegisterInfoRes();
-        CmdPackage response = CmdPackage.successRes(requset.getSn(), res);
+        CmdPackage response = CmdPackage.successRes(request.getSn(), res);
         if (CollectionUtils.isEmpty(nodesInfo)) {
             return response;
         }

@@ -12,8 +12,8 @@ import com.sjw.magi.common.constant.MagiCmdCodeConstant;
 import com.sjw.magi.common.expection.MagiException;
 import com.sjw.magi.common.pojo.MagiClientNode;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
-import com.sjw.magi.common.request.ClientRegisterReq;
-import com.sjw.magi.common.response.RegisterInfoRes;
+import com.sjw.magi.common.request.magi.ClientRegisterReq;
+import com.sjw.magi.common.response.magi.RegisterInfoRes;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;

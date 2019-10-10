@@ -1,4 +1,4 @@
-package com.sjw.magi.common.request;
+package com.sjw.magi.common.request.magi;
 
 
 import lombok.Data;

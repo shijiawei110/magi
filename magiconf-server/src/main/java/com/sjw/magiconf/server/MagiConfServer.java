@@ -10,6 +10,7 @@ import com.sjw.magi.common.constant.MagiConfCmdCodeConstant;
 import com.sjw.magi.common.constant.MagiConfCmdPoolNameConstant;
 import com.sjw.magiconf.server.listener.DefaultMagiConfServerListener;
 import com.sjw.magiconf.server.processor.MagiConfServerDefaultProcessor;
+import com.sjw.magiconf.server.store.MemoryConf;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.ExecutorService;
@@ -27,6 +28,11 @@ public class MagiConfServer {
      * netty服务实例
      **/
     private NettyServer nettyServer;
+
+    /**
+     * 内存kv数据库
+     */
+    private MemoryConf memoryConf = new MemoryConf();
 
     public MagiConfServer(MagiConfServerBuilder magiConfServerBuilder, NettyServerBuilder nettyServerBuilder) {
         ChannelEventListener serverListener = new DefaultMagiConfServerListener();

@@ -1,4 +1,4 @@
-package com.sjw.magi.common.response;
+package com.sjw.magi.common.response.magi;
 
 import com.google.common.collect.Lists;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
