@@ -2,11 +2,11 @@ package com.sjw.magi.common.constant;
 
 /**
  * @author shijiawei
- * @version ProtocolConstant.java, v 0.1
+ * @version MagiCmdCodeConstant.java, v 0.1
  * @date 2019/1/24
  * 注册器码全局变量
  */
-public class ReqCmdProcessorCodeConstant {
+public class MagiCmdCodeConstant {
     /**
      * 默认处理器
      **/

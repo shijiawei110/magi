@@ -6,8 +6,8 @@ import com.sjw.fastnetty.nettybase.listener.ChannelEventListener;
 import com.sjw.fastnetty.server.NettyServer;
 import com.sjw.fastnetty.server.NettyServerBuilder;
 import com.sjw.fastnetty.utils.ThreadPoolUtil;
-import com.sjw.magi.common.constant.ProcessorPoolNameConstant;
-import com.sjw.magi.common.constant.ReqCmdProcessorCodeConstant;
+import com.sjw.magi.common.constant.MagiCmdPoolNameConstant;
+import com.sjw.magi.common.constant.MagiCmdCodeConstant;
 import com.sjw.magi.server.channel.listener.MagiServerListener;
 import com.sjw.magi.server.manager.ClientNodeManager;
 import com.sjw.magi.common.pojo.MagiServerNode;
@@ -82,19 +82,19 @@ public class MagiServer {
         }
         //测试处理器
         ReqCmdProcessor defaultProcessor = new MagiServerDefaultProcessor();
-        ExecutorService defaultProcessorPool = ThreadPoolUtil.createSinglePool(ProcessorPoolNameConstant.SERVER_DEFAULT_POOL_NAME);
+        ExecutorService defaultProcessorPool = ThreadPoolUtil.createSinglePool(MagiCmdPoolNameConstant.SERVER_DEFAULT_POOL_NAME);
         ReqCmdProcessorHolder defaultProcessorHolder = new ReqCmdProcessorHolder(defaultProcessor, defaultProcessorPool);
-        nettyServer.registerCmdProcessor(ReqCmdProcessorCodeConstant.DEFAULT, defaultProcessorHolder);
+        nettyServer.registerCmdProcessor(MagiCmdCodeConstant.DEFAULT, defaultProcessorHolder);
         // 服务注册处理器
         ReqCmdProcessor registerProcessor = new RegisterProcessor(this.clientNodeManager);
-        ExecutorService registerProcessorPool = ThreadPoolUtil.createDefaultPool(ProcessorPoolNameConstant.SERVER_REGISTER_POOL_NAME);
+        ExecutorService registerProcessorPool = ThreadPoolUtil.createDefaultPool(MagiCmdPoolNameConstant.SERVER_REGISTER_POOL_NAME);
         ReqCmdProcessorHolder registerProcessorHolder = new ReqCmdProcessorHolder(registerProcessor, registerProcessorPool);
-        nettyServer.registerCmdProcessor(ReqCmdProcessorCodeConstant.SERVER_REGISTER, registerProcessorHolder);
+        nettyServer.registerCmdProcessor(MagiCmdCodeConstant.SERVER_REGISTER, registerProcessorHolder);
         //服务查询处理器
         ReqCmdProcessor queryRegisterProcessor = new QueryRegisterProcessor(this.clientNodeManager);
-        ExecutorService queryRegisterProcessorPool = ThreadPoolUtil.createDefaultPool(ProcessorPoolNameConstant.SERVER_QUERY_REGISTER_POOL_NAME);
+        ExecutorService queryRegisterProcessorPool = ThreadPoolUtil.createDefaultPool(MagiCmdPoolNameConstant.SERVER_QUERY_REGISTER_POOL_NAME);
         ReqCmdProcessorHolder queryRegisterProcessorHolder = new ReqCmdProcessorHolder(queryRegisterProcessor, queryRegisterProcessorPool);
-        nettyServer.registerCmdProcessor(ReqCmdProcessorCodeConstant.QUERY_REGISTER_INFO, queryRegisterProcessorHolder);
+        nettyServer.registerCmdProcessor(MagiCmdCodeConstant.QUERY_REGISTER_INFO, queryRegisterProcessorHolder);
     }
 
 

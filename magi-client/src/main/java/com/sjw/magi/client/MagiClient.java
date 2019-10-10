@@ -8,7 +8,7 @@ import com.sjw.fastnetty.utils.IpUtil;
 import com.sjw.fastnetty.utils.ThreadNameUtil;
 import com.sjw.magi.client.channel.listener.DefaultMagiClientListener;
 import com.sjw.magi.client.manager.MagiServerCacheManager;
-import com.sjw.magi.common.constant.ReqCmdProcessorCodeConstant;
+import com.sjw.magi.common.constant.MagiCmdCodeConstant;
 import com.sjw.magi.common.expection.MagiException;
 import com.sjw.magi.common.pojo.MagiClientNode;
 import com.sjw.magi.common.pojo.MagiClientNodeInfo;
@@ -70,7 +70,7 @@ public class MagiClient {
     }
 
     public void ping() throws InterruptedException {
-        CmdPackage request = CmdPackage.createReq(ReqCmdProcessorCodeConstant.DEFAULT, null);
+        CmdPackage request = CmdPackage.createReq(MagiCmdCodeConstant.DEFAULT, null);
         CmdPackage response = nettyClient.cmdSync(magiServerCacheManager.getMainNode(), request);
         log.info("ping result = {}", response.getResponse().toString());
     }
@@ -85,7 +85,7 @@ public class MagiClient {
         clientRegisterReq.setAddress(myselfNode.getAddress());
         clientRegisterReq.setNodeName(myselfNode.getNodeName());
         clientRegisterReq.setZone(myselfNode.getZone());
-        CmdPackage request = CmdPackage.createReq(ReqCmdProcessorCodeConstant.SERVER_REGISTER, clientRegisterReq);
+        CmdPackage request = CmdPackage.createReq(MagiCmdCodeConstant.SERVER_REGISTER, clientRegisterReq);
         log.info("magi client init  register");
         CmdPackage response = nettyClient.cmdSync(magiServerCacheManager.getMainNode(), request);
         ResponseCodeType responseStatus = response.getResponseCodeType();
@@ -102,7 +102,7 @@ public class MagiClient {
      * 获取注册信息
      */
     public List<MagiClientNodeInfo> getRegisterInfo() throws InterruptedException {
-        CmdPackage request = CmdPackage.createReq(ReqCmdProcessorCodeConstant.QUERY_REGISTER_INFO, null);
+        CmdPackage request = CmdPackage.createReq(MagiCmdCodeConstant.QUERY_REGISTER_INFO, null);
         log.info("magi client request a query register -> req = {}", request);
         CmdPackage response = nettyClient.cmdSync(magiServerCacheManager.getMainNode(), request);
         log.info("magi client query register qreceive a res -> res = {}", response);
@@ -126,7 +126,7 @@ public class MagiClient {
      * 发送心跳请求
      */
     private void sendHeartBeat(String address) {
-        CmdPackage request = CmdPackage.createOneWayReq(ReqCmdProcessorCodeConstant.CLIENT_HERAT_BEAT, null);
+        CmdPackage request = CmdPackage.createOneWayReq(MagiCmdCodeConstant.CLIENT_HERAT_BEAT, null);
         try {
             nettyClient.cmdOneWay(address, request);
         } catch (InterruptedException e) {

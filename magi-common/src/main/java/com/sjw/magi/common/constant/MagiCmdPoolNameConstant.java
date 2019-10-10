@@ -2,11 +2,11 @@ package com.sjw.magi.common.constant;
 
 /**
  * @author shijiawei
- * @version ProtocolConstant.java, v 0.1
+ * @version MagiCmdPoolNameConstant.java, v 0.1
  * @date 2019/1/24
  * 注册器线程池名
  */
-public class ProcessorPoolNameConstant {
+public class MagiCmdPoolNameConstant {
     /**
      * 默认name
      **/
