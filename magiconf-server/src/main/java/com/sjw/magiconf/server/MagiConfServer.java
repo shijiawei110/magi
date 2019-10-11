@@ -10,6 +10,7 @@ import com.sjw.magi.common.constant.MagiConfCmdCodeConstant;
 import com.sjw.magi.common.constant.MagiConfCmdPoolNameConstant;
 import com.sjw.magiconf.server.listener.DefaultMagiConfServerListener;
 import com.sjw.magiconf.server.processor.MagiConfServerDefaultProcessor;
+import com.sjw.magiconf.server.processor.MagiConfSingleGetProcessor;
 import com.sjw.magiconf.server.store.MemoryConf;
 import lombok.extern.slf4j.Slf4j;
 
@@ -67,6 +68,11 @@ public class MagiConfServer {
         ExecutorService defaultProcessorPool = ThreadPoolUtil.createSinglePool(MagiConfCmdPoolNameConstant.SERVER_DEFAULT_POOL_NAME);
         ReqCmdProcessorHolder defaultProcessorHolder = new ReqCmdProcessorHolder(defaultProcessor, defaultProcessorPool);
         nettyServer.registerCmdProcessor(MagiConfCmdCodeConstant.DEFAULT, defaultProcessorHolder);
+        //单个查询处理器
+        ReqCmdProcessor singleGetProcessor = new MagiConfSingleGetProcessor(memoryConf);
+        ExecutorService singleGetProcessorPool = ThreadPoolUtil.createSinglePool(MagiConfCmdPoolNameConstant.SINGLE_GET_POOL_NAME);
+        ReqCmdProcessorHolder singleGetProcessorHolder = new ReqCmdProcessorHolder(singleGetProcessor, singleGetProcessorPool);
+        nettyServer.registerCmdProcessor(MagiConfCmdCodeConstant.SINGLE_GET, singleGetProcessorHolder);
     }
 
 

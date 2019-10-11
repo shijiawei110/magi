@@ -17,6 +17,13 @@ public class MemoryConf {
      */
     private ConcurrentMap<String, Object> table = Maps.newConcurrentMap();
 
+    public MemoryConf() {
+        //写点测试数据 todo
+        table.put("testStr", "testValue");
+        table.put("testInt", 123);
+        table.put("testLong", 12345L);
+    }
+
     public void put(String k, Object v) {
         if (StringUtils.isBlank(k)) {
             return;

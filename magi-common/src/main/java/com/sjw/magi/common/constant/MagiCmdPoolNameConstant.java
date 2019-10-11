@@ -18,5 +18,5 @@ public class MagiCmdPoolNameConstant {
     /**
      * 服务发现name
      */
-    public static final String SERVER_QUERY_REGISTER_POOL_NAME = "registerQuery";
+    public static final String SERVER_QUERY_REGISTER_POOL_NAME = "register-query";
 }

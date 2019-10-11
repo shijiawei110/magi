@@ -11,4 +11,9 @@ public class MagiConfCmdPoolNameConstant {
      * 默认name
      **/
     public static final String SERVER_DEFAULT_POOL_NAME = "default";
+
+    /**
+     * 单个查询key
+     */
+    public static final String SINGLE_GET_POOL_NAME = "single-get";
 }

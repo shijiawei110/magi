@@ -17,5 +17,10 @@ public class MagiConfCmdCodeConstant {
      */
     public static final int TEST = -999;
 
+    /**
+     * 单个key查询请求
+     */
+    public static final int SINGLE_GET = 1001;
+
 
 }
