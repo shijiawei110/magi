@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="300">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>%-5p|%d{yyyy-MM-dd HH:mm:ss,SSS}|%X{TRACE_ID}|%t|%C{1}:%L|%m%n</pattern>
+            </PatternLayout>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <!--asyncroot代替root 表示启用了 异步日志 需要依赖disruptor-->
+        <AsyncRoot level="INFO" includeLocation="true" additivity="false">
+            <AppenderRef ref="Console"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

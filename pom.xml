@@ -25,6 +25,7 @@
         <module>magi-server</module>
         <module>magi-client</module>
         <module>magiconf-server</module>
+        <module>magiconf-client</module>
         <module>magi-common</module>
     </modules>
 

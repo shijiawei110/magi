@@ -55,6 +55,8 @@ public class MagiConfServer {
         if (null == nettyServer) {
             return;
         }
+        //todo 通知所有的客户端我要下线了,你不要再来调用我了让client去切换到其他的server
+        //todo 或者可以再客户端设置listener监听,channel断开时切换到其他server (此方法更好我觉得!)
         nettyServer.shutdown();
     }
 
