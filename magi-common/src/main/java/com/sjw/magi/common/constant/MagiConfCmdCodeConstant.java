@@ -22,5 +22,10 @@ public class MagiConfCmdCodeConstant {
      */
     public static final int SINGLE_GET = 1001;
 
+    /**
+     * 客户端心跳请求
+     **/
+    public static final int CLIENT_HERAT_BEAT = 999;
+
 
 }

@@ -1,1 +1,0 @@
-package com.sjw.magiconf.client;
