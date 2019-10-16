@@ -74,7 +74,7 @@ public class MagiConfClient {
      */
     private void startHeartBeat() {
         heartBeatScheduler = Executors.newSingleThreadScheduledExecutor(
-                runnable -> new Thread(runnable, ThreadNameUtil.getName("magi-clienthb")));
+                runnable -> new Thread(runnable, ThreadNameUtil.getName("magiconf-client")));
         heartBeatScheduler.scheduleAtFixedRate(() -> {
             List<String> addrs = serverCacheManager.getAllNodesAddress();
             addrs.parallelStream().forEach(this::sendHeartBeat);
