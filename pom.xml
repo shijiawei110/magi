@@ -45,7 +45,7 @@
                 <!--基础网络包依赖-->
                 <groupId>io.github.shijiawei110</groupId>
                 <artifactId>fastnetty</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.2</version>
             </dependency>
 
             <!--自身模块-->
