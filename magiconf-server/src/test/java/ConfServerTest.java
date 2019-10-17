@@ -21,6 +21,6 @@ public class ConfServerTest {
 
         final MagiConfServer magiServer = new MagiConfServer(magiServerBuilder, nettyServerBuilder);
         magiServer.start();
-        magiServer.close();
+//        magiServer.close();
     }
 }

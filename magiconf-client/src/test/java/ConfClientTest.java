@@ -36,6 +36,7 @@ public class ConfClientTest {
                 break;
             }
         }
+        System.out.println("magiconf客户端结束");
         scan.close();
         magiConfClient.close();
     }

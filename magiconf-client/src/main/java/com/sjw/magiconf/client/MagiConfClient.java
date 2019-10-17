@@ -62,7 +62,7 @@ public class MagiConfClient {
      * 获取注册信息
      */
     public Object getSingleValue(String key) throws InterruptedException {
-        CmdPackage request = CmdPackage.createReq(MagiConfCmdCodeConstant.SINGLE_GET, null);
+        CmdPackage request = CmdPackage.createReq(MagiConfCmdCodeConstant.SINGLE_GET, key);
         CmdPackage response = nettyClient.cmdSync(serverCacheManager.getMainNode(), request);
         log.info("magiconf client get single value | receive a res -> res = {}", response);
         Object res = response.getResponse();
