@@ -78,6 +78,14 @@
                 <artifactId>disruptor</artifactId>
                 <version>3.4.2</version>
             </dependency>
+
+            <!--aop读取注解-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework</groupId>-->
+<!--                <artifactId>spring-aop</artifactId>-->
+<!--                <version>5.2.0.RELEASE</version>-->
+<!--            </dependency>-->
+
         </dependencies>
     </dependencyManagement>
 
